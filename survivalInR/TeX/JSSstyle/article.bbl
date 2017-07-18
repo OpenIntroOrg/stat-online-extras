@@ -1,0 +1,52 @@
+\begin{thebibliography}{6}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Diez(2011)}]{OIsurv}
+Diez DM (2011).
+\newblock \emph{Survival analysis tutorial}.
+\newblock R package version 0.1,
+  \urlprefix\url{http://CRAN.R-project.org/package=OIsurv}.
+
+\bibitem[{Fox(2002)}]{Fox2002}
+Fox J (2002).
+\newblock \enquote{Cox Proportional-Hazards Regression for Survival Data.
+  Appendix to An R and S-PLUS Companion to Applied Regression.}
+\newblock \emph{Comprehensive R Archive Network}.
+\newblock
+  \urlprefix\url{http://cran.r-project.org/doc/contrib/Fox-Companion/appendix-%
+cox-regression.pdf}.
+
+\bibitem[{Klein \emph{et~al.}(2010)Klein, Moeschberger, and modifications~by
+  Jun~Yan}]{KMsurv}
+Klein, Moeschberger, modifications~by Jun~Yan (2010).
+\newblock \emph{KMsurv: Data sets from Klein and Moeschberger (1997), Survival
+  Analysis}.
+\newblock R package version 0.1-4,
+  \urlprefix\url{http://CRAN.R-project.org/package=KMsurv}.
+
+\bibitem[{Klein and Moeschberger(2003)}]{Klein2003}
+Klein JP, Moeschberger ML (2003).
+\newblock \emph{Survival Analysis: Techniques for Censored and Truncated Data}.
+\newblock Springer Verlag, New York.
+
+\bibitem[{{ReliaSoft Corporation website}(2006)}]{formsOfSurvData}
+{ReliaSoft Corporation website} (2006).
+\newblock \enquote{Data Classification.}
+\newblock
+  \urlprefix\url{http://www.weibull.com/LifeDataWeb/data_classification.htm}.
+
+\bibitem[{Therneau and original R port~by Thomas~Lumley(2009)}]{survival}
+Therneau T, original R port~by Thomas~Lumley (2009).
+\newblock \emph{survival: Survival analysis, including penalised likelihood.}
+\newblock R package version 2.35-8,
+  \urlprefix\url{http://CRAN.R-project.org/package=survival}.
+
+\end{thebibliography}

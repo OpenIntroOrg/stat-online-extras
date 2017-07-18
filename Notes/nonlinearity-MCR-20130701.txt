@@ -1,0 +1,21 @@
+- Footnote 1: "post a question to" = "post a question on" ? (not sure about this one)
+
+- Section 0.1 (this labeling looks funny, should it be section 1?)
+
+- Is the plot of y vs. x in this section the first plot in Fig 1? If so, it wasn't clear to me. If not, adding the plot pre-transformation would be useful.
+
+- In the book x* is used for a new observation, so it might be confusing that y* is the logged transform. I would recommend using some other indicator than * (y'?, though that usually means something else as well...)
+
+- Footnote 2: "What the model’s form suggests we would observe is that the distribution of the corresponding y values would be skewed, which is a result of the nonlinear relationship between the residuals and the outcome y." = "This model suggests that the distribution of the corresponding y values would be skewed as a result of the relationship between the residuals and the outcome y being nonlinear."
+
+- "Rather, we have performed a complicated form of data fishing where we mine the data until we see structure, meaning this apparent structure may just be due to chance." = "Rather, we have performed a complicated form of data fishing where we mine the data until we see structure. This structure may just be due to chance."
+
+- "if we could reasonably model the curviness of the line" = "if we could reasonably model the curve of the line"
+
+- "This is a good signal that we want to fit a curvy line" = "This is a good signal that we want to fit a curve" (or curved line, curvy line sounds like curvy hair to me...)
+
+- tip box: "if the model is still insufficient" = "if the model is still not a good fit"
+
+- can the last caution go on the previous page?
+
+- how about moving all mention of splines to the tip box instead of mentioning it earlier and then again in the tip box - with the earlier mention it's not at all clear what splines are, and it might be unclear to a student that knowing what it is is not necessary to continue with the document. by mentioning it at the end it's clear it's a technique not covered in the document, and hence not needed to understand it. this would move the link to the elements book towards the end as well.

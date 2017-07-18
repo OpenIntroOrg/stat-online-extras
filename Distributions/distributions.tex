@@ -1,0 +1,143 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Statistical Distributions}
+\author{David Diez}
+% \date{}                                           % Activate to display a given date or no date
+\begin{document}
+\pagestyle{empty}
+% \maketitle
+%\section{}
+%\subsection{}
+
+\begin{center}\Large\textbf{Statistical Distributions}\normalsize \\
+Produced by David Diez\end{center} \footnotesize
+\indent\indent\indent\indent\indent\indent\indent\indent\indent$\Gamma(\alpha) = \int_{0}^{\infty}{x^{\alpha-1}e^{-x}dx},\text{ }VarX = EX^2 - (EX)^2$\\ 
+
+\noindent\textbf{Bernoulli:} $f(x|p) = p^x(1-p)^{1-x},x \in \{0,1\}$
+\begin{eqnarray}
+EX = p,\text{ }VarX = p(1-p), \text{ }\Psi(t) = pe^t + (1-p) \notag
+\end{eqnarray}
+\indent Exponential family. $p(x,\theta) = \exp{\{ x\text{logit}(p) - (-\log{(1-p)}) \}}$ \\
+
+\noindent\textbf{Beta($\alpha$, $\beta$):} $f(x|\alpha,\beta) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1},x \in (0,1)$.
+\begin{eqnarray}
+EX = \frac{\alpha}{\alpha+\beta},\text{ }VarX = \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = \frac{1}{x(1-x)}\exp{\left\{ \alpha\log{x} + \beta\log{(1-x)} + \log{\left[\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\right]} \right\}}$ \\
+
+\noindent\textbf{Binomial:} $f(x|n,p) =$\scriptsize$\left(\begin{array}{c}n \\ x \end{array}\right)$\normalsize $p^x(1-p)^{n-x},x \in \{1,...,n\}$
+\begin{eqnarray}
+EX = np,\text{ }VarX = np(1-p),\text{ }\Psi(t) = (1-p+pe^t)^n \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = $\scriptsize$\left(\begin{array}{c}n \\ x \end{array}\right)$\footnotesize $\exp{\{ x\text{logit}(p) - (-n\log{(1-p)}) \}}$ \\
+
+\noindent\textbf{Cauchy:} $f(x) = \frac{1}{\pi(1+x^2)},x \in \Re$. The mean and variance do not exist. \\
+
+\noindent\textbf{Chi-Square:} $f(x|\nu) = \frac{2^{-\nu/2}}{\Gamma(\nu/2)}x^{\nu/2-1}e^{-x/2}$, for $x>0$.
+\begin{eqnarray}
+EX = \nu,\text{ }VarX = 2\nu
+\notag\end{eqnarray}
+
+\noindent\textbf{Dirichlet:} $f(\textbf{x}|\alpha) = \frac{\Gamma(\alpha_{\cdot})}{\prod^d\Gamma(\alpha_i)}x_1^{\alpha_1}*...*x_d^{\alpha_d}$.
+\begin{eqnarray}
+EX_i = \frac{\alpha_i}{\alpha_{\cdot}},\text{ }VarX_i = \frac{\alpha_i(\alpha_\cdot - \alpha_i)}{\alpha_\cdot^2(\alpha_\cdot+1)},\text{ }Cov(X_i,X_j) = -\frac{\alpha_i\alpha_j}{\alpha_\cdot^2(\alpha_\cdot+1)}
+\notag\end{eqnarray}
+
+\noindent\textbf{Exponential:} $f(x|\lambda) = \lambda e^{-\lambda x}, x>0$. Exp. family. $p(x,\theta) = \exp{\{ -\lambda x -(-\log{\lambda}) \}}$
+\begin{eqnarray}
+EX = \frac{1}{\lambda},\text{ }VarX = \frac{1}{\lambda^2},\text{ } \Psi(t) = \left( 1-\frac{t}{\lambda} \right)^{-1},\text{ }MLE(\lambda) = \frac{1}{\bar{x}} \notag
+\end{eqnarray}
+
+\noindent\textbf{Gamma:} $f(x|\alpha,\beta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},x>0$.
+\begin{eqnarray}
+EX = \frac{\alpha}{\beta}, \text{ }VarX = \frac{\alpha}{\beta^2},\text{ } \Psi(t) = \left( \frac{\beta}{\beta-t} \right)^{\alpha} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = \exp{\left\{ (\alpha-1)\log{x} -\beta x -\left(-\log{\left[\frac{\beta^{\alpha}}{\Gamma(\alpha)}\right]}\right) \right\}}$ \\
+
+\noindent\textbf{Geometric:} $f(x|p) = (1-p)^{x-1}p, x \in \{1,2,...\}$ 
+\begin{eqnarray}
+EX = 1/p, \text{ }VarX = \frac{1-p}{p^2},\text{ }\Psi(t) = \frac{pe^t}{1-(1-p)e^t},\text{ },MLE(p) = \left(\frac{1}{n}\sum{x_i}\right)^{-1} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = \exp{\left\{ (x-1)\log{(1-p)} - (-\log{p}) \right\}}$ \\
+
+\noindent\textbf{Inverse-Gamma:} $f(x|\alpha,\beta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{-(\alpha+1)}e^{-\beta/x},x>0$.
+\begin{eqnarray}
+EX = \frac{\beta}{\alpha-1}\text{ for }, \text{ }VarX = \frac{\beta^2}{(\alpha-1)^2(\alpha-2)},\text{ }
+\notag\end{eqnarray}
+
+\noindent\textbf{Lognormal:} $f(x|\mu,\sigma) = \frac{1}{x\sqrt{2\pi\sigma^2}}\exp{\left\{ -(1/2)\left[\frac{\log{(x)}-\mu}{\sigma}\right]^2 \right\}}, x \in[0,\infty)$ 
+\begin{eqnarray}
+EX &=& e^{\mu+(1/2)\sigma^2}, \text{ }VarX = \left(e^{\sigma^2}-1\right)e^{2\mu + \sigma^2}, \notag \\
+MLE(\mu) &=& \frac{\sum{\log{x_i}}}{n},\text{ } MLE(\sigma^2) = \frac{\sum{(\log{x_i} - MLE(\mu))^2}}{n} \notag
+\end{eqnarray}
+
+\noindent\textbf{Negative Binomial:} $f(x|r,p) = \left(\begin{array}{c} r+x-1 \\ x \end{array}\right)p^r(1-p)^x, x \in\{0,1,... \}$ 
+\begin{eqnarray}
+EX = r\frac{1-p}{p}, \text{ }VarX = r\frac{1-p}{p^2},\text{ } \Psi(t) = \left( \frac{p}{1-(1-p)e^t} \right)^r \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) =\left(\begin{array}{c} r+x-1 \\ x \end{array}\right) \exp{\{ x\log{(1-p)} -(-r\log{p}) \}}$ \\
+
+\noindent\textbf{Normal:} $f(x|\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp{\left\{ -\frac{(x-\mu)^2}{2\sigma^2} \right\}}, x \in \Re $.
+\begin{eqnarray}
+EX = \mu, \text{ }VarX = \sigma^2,\text{ } \Psi(t) = \exp{\left\{ \mu t + \frac{\sigma^2t^2}{2} \right\}} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) =\frac{1}{\sqrt{2\pi}}\exp{\left\{ -\frac{x^2}{2\sigma^2} +\frac{x\mu}{\sigma^2} - 
+\left(\frac{\mu^2}{2\sigma^2} + \log{\sigma}\right) \right\}}$ \\
+
+\noindent\textbf{Pareto:} $f(x|\theta, a) = \theta a^{\theta} / x^{(\theta+1)}, x > a>0,\theta>0$
+\begin{eqnarray}
+ EX = \frac{\theta a}{\theta-1},\text{ }VarX = \frac{\theta a^2}{(\theta-1)^2(\theta-2)} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = \frac{1}{x}\exp{\left\{ -\theta\log{x} - (-\log{\theta} - \theta\log{a}) \right\}}$ \\
+
+\noindent\textbf{Poisson:} $f(x|\lambda) = \frac{e^{-\lambda}\lambda^x}{x!}, x \in \{0,1,...\}$
+\begin{eqnarray}
+EX = \lambda, \text{ }VarX = \lambda, \text{ }\Psi(t) = e^{\lambda(e^t -1)} ,\text{ }MLE(\lambda) = \frac{1}{n}\sum{x_i} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = \frac{\exp{\{ x\log{(\lambda)} -\lambda \}}}{x!}$ \\
+
+\noindent\textbf{Rayleigh:} $p(x,\theta)=\frac{x}{\theta^2}exp{\left[-\frac{x^2}{2\theta^2}\right]}, x \geq 0,\theta>0$.
+\begin{eqnarray}
+EX = \theta\sqrt{\pi/2}, \text{ }VarX = \frac{4-\pi}{2}\theta^2, \text{ }MLE(\theta) = \sqrt{\frac{1}{2n}\sum{x_i^2}} \notag
+\end{eqnarray}
+\indent Exp. family. $p(x,\theta) = x\exp{\left\{ -\frac{x^2}{2\theta^2} - 2\log{\theta} \right\}}$ \\
+
+\noindent\textbf{t:} $f(x|\nu) = \frac{\Gamma((\nu+1)/2)}{\sqrt{\nu\pi}\Gamma(\nu/2)(1+x^2/\nu)^{(\nu+1)/2}}, \nu>0$(degrees of freedom)
+\begin{eqnarray}
+EX = 0\text{ for }\nu>1, \text{ }VarX = \frac{\nu}{\nu-2}\text{ for }\nu>2 \notag
+\end{eqnarray}
+
+\noindent\textbf{Uniform:} $f(x|a,b) = \frac{1}{b-a},x \in (a,b)$
+\begin{eqnarray}
+EX = (a+b)/2, \text{ }VarX = (b-a)^2/12,\text{ }\Psi(t) = \frac{e^{tb}-e^{ta}}{t(b-a)} \notag
+\end{eqnarray}
+
+\noindent\textbf{Weibull:} $f(x|\theta,a)=\theta a x^{a-1}\exp{(-\theta x^a)},x>0,\theta>0,a>0$ \\
+
+\noindent\textbf{Wishart:} $P(A|m,\Lambda) \propto |A|^{\frac{m-p-1}{2}}exp\left( -\frac{1}{2}tr(\Lambda^{-1}A) \right)$ for positive definite matrices $A$.
+\begin{eqnarray}
+EA = m\Lambda
+\notag\end{eqnarray}
+
+% \noindent\textbf{:}
+% \begin{eqnarray}
+% \notag\end{eqnarray}
+
+
+
+
+
+
+
+
+\end{document}   

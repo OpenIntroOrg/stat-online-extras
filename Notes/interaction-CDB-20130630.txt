@@ -1,0 +1,11 @@
+Interaction
+------------------------------------------------
+- "available as a free PDF at openintro.org and for under $10 as a paperback on amazon.com" = "available for free in PDF at openintro.org and in paperback from under $10 at amazon.com"
+- it seemed a little odd that Figure 1 appeared before the first substantive text in this document, especially since Example 1 discusses plant growth.
+- "Side-by-side box plot" ?= "Side-by-side box plots"
+- "represents be the" = "are the"
+- "How would these two variables interact?" = "While each of these contributes individually to plant growth, we might wonder whether there is any interaction between them when promoting growth."
+- "We'd find that plants… OpenIntro Statistics." = "First and foremost, we would notice no amount of water is sufficient for plant growth if sunshine is completely absent, and vice versa. If you modeled growth simply as a function of sunshine plus water (for example, using a basic multiple regression model introduced in Chapter 8 of OpenIntro Statistics), you'd run into trouble at first."
+- "We'll consider" = "Let's consider"
+- "Guinea pigs'" = "Guinea pigs"
+- Name the models "Model 1" and "Model 2". Then refer to these models by name in Table 2 and Table 3.

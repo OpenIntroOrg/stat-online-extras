@@ -1,0 +1,13 @@
+\setlength{\parindent}{0mm}
+\newcommand{\tTitle}[1]{\textbf{\Large #1}}
+\newcounter{bib}
+\setcounter{bib}{0}
+\newcommand{\bibItem}[2]{\refstepcounter{bib}\label{#1}$^{\arabic{bib}}$ #2}
+\newcommand{\refBib}[1]{$^{\text{\ref{#1}}}$}
+\newcommand{\term}[1]{\textbf{#1}}
+\newcommand{\package}[1]{\textbf{#1}}
+\definecolor{rcom}{rgb}{0,0,0}
+\definecolor{verbatimrcom}{rgb}{0.6,0,0}
+\newcommand{\rcom}[1]{\texttt{\color{rcom}#1}}
+\newcommand{\rCom}[1]{\texttt{> #1}}
+\newcommand{\proglang}[1]{\textsf{#1}}

@@ -1,0 +1,8 @@
+1 Review the CoxPH sections
+2 Review OIsurv
+3 Submit OIsurv
+4 Put into R Journal format, evaluate usefulness
+5 Ask Chris for quick comments
+6 Review entire document
+7 Submit to R Journal or repost
+8 Contact others (e.g. UC Davis) to replace old version

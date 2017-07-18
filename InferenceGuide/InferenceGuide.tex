@@ -1,0 +1,112 @@
+% This guide was developed by OpenIntro (openintro.org).
+% Licensed under Creative Commons Attribution-ShareAlike 3.0 license
+%    http://creativecommons.org/licenses/by-sa/3.0/
+% Attribution Guidelines
+% + OpenIntro must be cited as the developer of this guide, or
+% + OpenIntro Statistics textbook must be referenced as a resource within the guide.
+% + The attribution must appear within the PDF itself.
+% + If this guide is included in a larger work, the CC BY-SA license for the work must be made clearly apparent.
+% + This text and all text above in this LaTeX file must be maintained for redistribution of this LaTeX file.
+
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx, amssymb, amsmath, epstopdf, fullpage, color}
+\definecolor{oiGA}{rgb}{0,0,0}
+\definecolor{oiGAA}{rgb}{.4,.4,.4}
+\definecolor{oiGB}{rgb}{.5,.5,.5}
+\definecolor{oiGC}{rgb}{.85,.85,.85}
+\definecolor{oiB}{rgb}{.337,.608,.741}
+\definecolor{oiG}{rgb}{.298,.447,.114}
+\definecolor{oiY}{rgb}{.957,.863,0}
+\definecolor{oiR}{rgb}{.941,.318,.200}
+\usepackage[bookmarksnumbered, colorlinks=false,pdfborder={0 0 0},urlcolor= oiGAA,colorlinks=true,linkcolor= oiGAA, citecolor= oiGAA,backref=true]{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand{\tablebuffer}{2.5mm}
+
+\title{Confidence Intervals and Tests}
+%\author{David Diez}
+\date{}                                           % Activate to display a given date or no date
+\renewcommand{\thepage}{}
+\setlength\textheight{9.7in}
+\setlength\voffset{-9mm}
+\begin{document}
+%\maketitle
+%\section{}
+%\subsection{}
+
+\begin{center}\color{oiB}
+\Large OpenIntro Inference Guide \\[1mm]
+Means and Proportions, 1-2 Samples   \normalsize
+\end{center} 
+
+%\small
+\vspace{2mm}\noindent When creating a confidence interval (CI) or running a test for a mean, proportion, or difference in means or proportions, we first identify an appropriate \emph{point estimate}, which we calculate using a sample. Next, we calculate the \emph{standard error} ($SE$) of the point estimate, which is a measure of the point estimate's uncertainty. The general form for a confidence interval is 
+\small
+\begin{eqnarray*}
+\text{point estimate} \pm (z^{\star}\text{ or }t_{df}^{\star})*SE_{estimate}
+\end{eqnarray*}
+\normalsize
+The value $z^{\star}$ or $t_{df}^{\star}$ is found from the appropriate table (normal or t table) and is chosen based on the confidence level. The general form for a hypothesis test statistic is
+\small
+\begin{eqnarray*}
+\textit{test statistic} = \frac{\ \text{point estimate} - \text{null value}\ }{SE_{estimate}}
+\end{eqnarray*}
+\normalsize
+where the \emph{null value} is the value under question in $H_0$. For instance, if $H_0: \mu_1-\mu_2=7.3$,  then the null value is 7.3. Alternatively, if $H_0: p=0.4$, then the null value is 0.4. \\
+
+\noindent To identify the point estimate and standard error:\vspace{-1mm}
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item Determine the number of samples: 1 or 2.
+\item If individual outcomes are categorical, use proportions. If numerical, use means.
+\item Determine whether you would like to create a confidence interval or run a hypothesis test.
+\end{itemize}
+\noindent Identify the proper CI or test in the table below. The mechanics for inference will be the same in each case. Additional instructions and special circumstances for using the table below:\vspace{-1mm}
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item  Plot the data, and check conditions/assumptions! Use \href{http://www.openintro.org/stat/textbook.php}{OpenIntro Statistics} as a reference.
+\item If the inference is for proportions or the standard deviation is known, use the normal distribution. If it is for means and the standard deviation is unknown, use $t$, i.e. the $t$ distibution.
+\item For the 2-proportion test, use the pooled test when $H_0$ is $p_1-p_2=0$ (or $p_1=p_2$). For the pooled test, $\hat{p} = \frac{x_1 + x_2}{n_1+n_2} = \frac{n_1\hat{p}_1 + n_2\hat{p}_2}{n_1+n_2}$.
+\item When the data are numerical, there are two samples, and the data are also paired, compute the difference of each pair and analyze these differences. Note: $n_{_{\text{diff}}}=\#$ of differences, i.e.~2~paired samples each of size 10 implies there are $n_{_{\text{diff}}}=10$ differences.
+\item Reminder: $s$, $s_1$, $s_2$, and $s_{_{\text{diff}}}$ are standard deviations of the samples.\vspace{-2mm}
+\end{itemize}
+%Use the following two table to identify the estimator, standard error (SE), etc.
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{l  c  c  c}
+\hline
+Circumstance & \ \ parameter \  & \ \ estimate \  & $\text{SE}_{\text{estimate}}$ \\
+\hline
+\\[-3.5mm]
+\href{http://www.openintro.org/stat/down/oiStat2_06.pdf}{1-prop CI}
+	& $p$ &	$\hat{p}$ & $\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ \\[\tablebuffer]
+\href{http://www.openintro.org/stat/down/oiStat2_06.pdf}{1-prop test, $p_0 = expected$}
+	& $p$ &	$\hat{p}$ & $\sqrt{\frac{p_0(1-p_0)}{n}}$ \\[\tablebuffer]
+\href{http://www.openintro.org/stat/down/oiStat2_06.pdf}{2-prop, unpooled, test or CI}
+	& $p_1-p_2$ & $\hat{p}_1 - \hat{p}_2$ & 
+	$\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$
+	\\[\tablebuffer]
+\href{http://www.openintro.org/stat/down/oiStat2_06.pdf}{2-prop, pooled, test only}
+	& $p_1 - p_2$ & $\hat{p}_1 - \hat{p}_2$ & 
+	$\sqrt{\frac{\hat{p}(1-\hat{p})}{n_1} + \frac{\hat{p}(1-\hat{p})}{n_2}}$ \\[\tablebuffer]
+\hline
+\\[-3.5mm]
+\href{http://www.openintro.org/stat/down/oiStat2_05.pdf}{1-samp t-test or CI}
+	& $\mu$ & $\bar{x}$ & $s/\sqrt{n}$ \\[1.5mm]
+\href{http://www.openintro.org/stat/down/oiStat2_05.pdf}{2-samp, unpaired, t-test or CI}
+	& $\mu_1 - \mu_2$ & $\bar{x}_1 - \bar{x}_2$ &
+	$\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$ \\[\tablebuffer]
+\href{http://www.openintro.org/stat/down/oiStat2_05.pdf}{2-samp, paired, t-test or CI}
+	& $\mu_{_{\text{diff}}} = \mu_1 - \mu_2$ & $\bar{x}_{_{\text{diff}}}$ &
+	$s_{_{\text{diff}}}/\sqrt{n_{_{\text{diff}}}}$ \\[1mm]
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+%$^\dagger$For a 1-proportion test, use the $expected$ proportion from $H_0$ instead of $\hat{p}$ in $SE$.
+
+
+\end{document}

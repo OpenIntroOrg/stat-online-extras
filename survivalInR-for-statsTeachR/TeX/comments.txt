@@ -1,0 +1,133 @@
+
+Page 1
+-----------------------------------
+- "This document is intended to assist an individual who is" = "This document is intended to assist individuals who are"
+- "A couple short" = "A few short"
+- "may be a helpful supplement for Klein and Moeschberger's book." = "may be a particularly helpful supplement to Klein and Moeschberger's book, with which {\bf KMsurv} is associated."
+- "provide the {\bf OIsurv} package is loaded." = "provide the {\bf survival, OIsurv} and {\bf KMsurv} packages are loaded."
+- "loading this package are described" = "loading this package is described"
+
+
+Page 2
+-----------------------------------
+- "which include data sets" = "which includes data sets"
+- "Supplemental functions utilized are included in {\bf OIsurv}" = "Supplemental functions can be found in {\bf OIsurv}"
+- Flip treatment of attach() and $ operator, so that you first tell them they SHOULD use $ and should AVOID attach(). Conveniently, the page no longer ending in an ellipsis.
+- "To make columns from a data frame available for use as variables, use attach()." = "The {\bf attach()} command makes columns from a data frame available for use as variables, allowing them to be called simply by their column name."
+
+
+Page 3
+-----------------------------------
+- "# subset for just the first group by using" = "# create a subset that includes just the first group by using"
+- It is a little unclear to me that your language in Page 2 seems to suggest you prefer the $ operator, but then use attach/dettach. Can this small inconsistency be alleviated?
+- "plus-signs signify those" = "plus-signs identify those"
+- What is meant by "this type of data" ?
+- I don't see an {\bf event} argument on Page 3. Perhaps just mention that it is not shown (and describe where it would be found).
+- What does "/" mean in "event/censoring"? Is it "or"?
+- "The left-truncated right-censored observations are described in the {\bf Surv} help documentation to be of type "{\tt counting}"." = "Left-truncated right-censored observations are of type "{\tt counting}", which [please tell me something brief about type "counting"]. The {\bf Surv} help documents provide additional information."
+- "functions are picky and will" = "functions will"
+
+
+Page 4
+-----------------------------------
+- "means the number of individuals who die" = "means individuals who die"
+- "MLE" = "Maximum Likelihood Estimator (MLE)"
+- "variance is given" = "variance are given"
+- Both equation arrays need require punctuation. At minimum, they should end in a period ".".
+- "inputs a formula of a" = "takes as input a formula of a"
+- "The confidence level..." = "{\tt Survfit()} takes additional arguments. For example, the confidence level..."
+- "At this time," = "In the current version of the {\bf survival} package ([version number]),"
+- "outputs" = "returns" here and throughout (eg. also on Page 5)
+
+
+Page 5
+-----------------------------------
+- "Typical arguments" = "Standard arguments"
+- What does "groups" mean here?
+- "K-M" has not yet been introduced. Perhaps it can be established in the first sentence of Page 4.
+- "which designates which" = "that designates which"
+
+
+Page 6
+-----------------------------------
+- title "Confidence Bounds" = "Simultaneous Confidence Bands"
+- "The confidence intervals... of the confidence bands." = "{\em Pointwise} confidence intervals, like those introduced in the previous pages, apply to a single point in the time scale. Now we turn our attention to {\em simultaneous} confidence intervals, which are valid for the entire range of time values simultaneously. A simultaneous 95% confidence interval, for example, will capture the entire true survival curve about 19 out of 20 times."
+- "No functions in... from {\bf OIsurv}." = "While the {\bf survival} package doesn't offer tools for simultaneous confidence bands, they can be calculated using {\tt confBands} from the {\bf OIsurv} library."
+- "; the {\tt type}" = "; and the {\tt type}"
+- ", which are not discussed here" = ""
+- "The confidence bands may" = "Confidence bands may"
+- Use "pointwise confidence intervals" and "simultaneous confidence intervals" in legend for Figure 2  (or perhaps "simultaneous confidence bands")
+- "Confidence intervals and bands" = "Pointwise and simultaneous confidence intervals" (or perhaps "Pointwise confidence intervals and simultaneous confidence bands")
+- "The default for" = "Not that the default for"
+- "non-symmetric" = "asymmetric"
+
+
+Page 7
+-----------------------------------
+- "No function in the survival package computes either form of the cumulative hazard function, but this can be accomplished using output of summary(survfit())" = "While no function in the {\bf survival} package calculates either form automatically, output from {\tt summary(survfit())} can be used to find the values."
+
+
+Page 8
+-----------------------------------
+- "the survival function estimate" = "the estimated survival function"
+- "the median estimate" = "the estimated median"
+- Here and possibly throughout, you might consider using the terms "(pointwise) confidence intervals)" and "(simultaneous) confidence bands" exclusively. On the topic, to which type of "confidence bounds" are you referring in the first paragraph of this page?
+- When the pdf renders on my screen, there is a curious mark just to the right of the first $\mu$ in your equation array.
+- In "The median and its bounds" the term "bounds" is ambiguous.
+
+
+Page 9
+-----------------------------------
+- "Setting up hypotheses for this problem" = "We can formulate the hypotheses as"
+- "for all $t$." = "for all $t$ and"
+- The equation for $Z_k$ needs punctuation; principally at period "." at the end.
+- "the data provides" = "the data provide"
+- "against null hypothesis" = "against the null hypothesis"
+- "; the summary of this object is not useful (a bit surprising)" = ". However, surprisingly, the summary of this object is not particularly useful."
+
+
+Page 10
+-----------------------------------
+- The sentence beginning "Primary interest lies..." needs to end in a period ".".
+- It is a little confusing to me that you use "I" as a covariance matrix, since "I" is usually the identity. Maybe this comes from somebody else's notation, or I have just missed something.
+
+
+Page 11
+-----------------------------------
+- "estimate of the risk ratio" = "an estimate of the risk ratio"
+- Need to change notation "I" in comment if changed on Page 10.
+- "utilized" = "used"
+- "was used to make" = "makes"
+- ", i.e. nothing fancy was intended" = ""
+
+
+Page 12
+-----------------------------------
+- "we use left-truncation" = "we apply left truncation"
+- "a rehabilitation clinic" = "an alcohol abuse rehabilitation clinic"
+- The term "sober" is specifically in reference to alcohol use. Thus "drug-relapse" is likely inaccurate (unless you are suggesting they are codependent on drugs and alcohol). If you are referring to drug use, perhaps use terms "clean" or "drug-free" in place of "sober" and then "a drug abuse rehabilitation clinic" in place of "an alcohol abuse rehabilitation clinic".
+- "became sober", please see previous comment.
+- "To model this data... two steps" = "These data can be modeled using two steps:"
+- "or right-censoring" = "or right-censored"
+
+
+Page 13
+-----------------------------------
+- Some comments in R code begin with capital letter. Others do not. Lower case appears more common throughout earlier pages of document.
+- "Here again are the meanings of each new variables:" = "The meanings of the variables are as follows:"
+- "simple case:" = "simple case;"
+
+
+Page 14
+-----------------------------------
+- "rewritten to a" = "rewritten in a"
+- Sentence beginning "The AFT model..." needs to end in a period ".".
+- "{\tt formula} for a survival" = "{\tt formula}, used for a survival"
+
+
+Page 15
+-----------------------------------
+- "A likelihood" = "a likelihood"
+- "alternative." = "alternative, and"
+- "Examination" = "examination"
+- "notion" ?= "hypothesis"
